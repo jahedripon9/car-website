@@ -28,9 +28,33 @@ const linkAction = () => {
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== SWIPER CAR ===============*/
+const swiperHome = new Swiper('.home__swiper', {
+    speed: 1200,
+    effect: 'fade',
 
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: (index, className) => {
+            return '<span class="' + className + '">' + String(index + 1).padStart(2, '0') + "</span>";
+        }
+    },
+
+
+});
 
 /*=============== GSAP ANIMATION ===============*/
-
+gsap.from('.home__panel-1', { y: -1000, duration: 2 })
+gsap.from('.home__panel-2', { y: 1000, duration: 2 })
+gsap.from('.home__image', { x: 1000, duration: 2 })
+gsap.from('.home__titles', { y: 100, opacity: 0, delay: 2 })
+gsap.from('.home__title', { y: 100, opacity: 0, delay: 2.1 })
 
 /*=============== ADD BLUR HEADER ===============*/
+const blurHeader = () => {
+    const header = document.getElementById('header')
+    // Add a class if the bottom offset is greater than 50 of the viewport
+    this.scrollY >= 50 ? header.classList.add('blur-header')
+        : header.classList.remove('blur-header')
+}
+window.addEventListener('scroll', blurHeader)
