@@ -503,3 +503,25 @@ img {
     height: 900px;
   }
 }
+
+/* Media Query for MacOS devices (common resolutions) */
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {
+  .swiper,
+    .home__article,
+    .home__interaction {
+      height: 100vh;
+    }
+    .home__social-border{
+      height: 200px;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+.swiper,
+  .home__article,
+  .home__interaction {
+    height: 100vh;
+  }
+}
+
+/* You can add more specific queries based on other resolutions if needed */
